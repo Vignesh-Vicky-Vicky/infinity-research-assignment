@@ -1,0 +1,98 @@
+.details-header {
+    .wrapper {
+        @include container();
+        display: flex;
+        align-items: center;
+
+        .img-wrapper {
+            img {
+                width: 34px;
+            }
+
+            .prev-icon {
+                display: none;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            flex-grow: 1;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+
+    @media #{$mobile} {
+        .wrapper{
+            .img-wrapper {
+                .prev-icon {
+                    display:inline-block;
+                }
+
+                .logo {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.works-list-container {
+    padding: 0 32px;
+    margin-top: 32px;
+
+    .works-list-wrapper {
+        @include container();
+
+        ul {
+            list-style: none;
+
+            li {
+                width: 100%;
+                margin-bottom: 18px;
+
+                button {
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid #ccc;
+                    outline: transparent;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-bottom: 8px;
+                    color: #222222;
+                    cursor: pointer;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+
+                    img {
+                        transition: transform 0.2s ease;
+                    }
+
+                    &.active {
+                        img {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                .links-container {
+                    display: none;
+                }
+
+                .links-wrapper {
+                    display: flex;
+                    flex-direction: column;
+
+                    a {
+                        color: #222222;
+                        padding: 0 0 8px 12px;
+                        margin-bottom: 12px;
+                        border-bottom: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+}
